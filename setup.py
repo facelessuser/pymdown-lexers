@@ -18,7 +18,7 @@ setup(
     packages=find_packages(),
     entry_points=entry_points,
     install_requires=[
-        'Pygments>=2.0.1'
+        # 'Pygments>=2.0.1'
     ],
     zip_safe=True,
     license='MIT License',
