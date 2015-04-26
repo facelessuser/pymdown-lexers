@@ -8,7 +8,7 @@ The purpose of this package was to natively add the lexers to Pygments via a plu
 
 The idea was to add the custom Pygments lexers here, and build a package that specifies the correct entry points.  When it is installed, the custom lexers can be used as if they were native.
 
-I don't actually imagine many lexers will be added to this, but they are not necessary to use PyMdown.
+I don't actually imagine many lexers will be added to this, but they are not needed to use PyMdown.
 
 # Included Lexers
 
