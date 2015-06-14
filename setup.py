@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+"""Setup pymdown-lexers."""
 from setuptools import setup, find_packages
 
 entry_points = '''
