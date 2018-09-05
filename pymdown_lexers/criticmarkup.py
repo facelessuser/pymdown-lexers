@@ -22,7 +22,7 @@ class CriticMarkupLexer(RegexLexer):
             (r'(?s)(\{>{2})(.*?)(<{2}\})', bygroups(token.String, token.Comment, token.String)),
             (
                 r'(?s)(\{~{2})(.*?)(~>.)(*?)(~{2}\})',
-                bygroups(token.String, token.Comment, token.String, token.String, token.Comment, token.String)
+                bygroups(token.String, token.Comment, token.String, token.Comment, token.String)
             ),
             (r' |\t', token.Whitespace),
             (r'.', token.Text)
