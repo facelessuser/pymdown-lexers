@@ -1,5 +1,5 @@
 """Pygments lexer for critic markup."""
-from pygments.lexer import RegexLexer, bygroups
+from pygments.lexer import RegexLexer
 from pygments import token
 
 __all__ = ("CriticMarkupLexer",)
@@ -16,14 +16,11 @@ class CriticMarkupLexer(RegexLexer):
 
     tokens = {
         'root': [
-            (r'(?s)(\{\+{2})(.*?)(\+{2}\})', bygroups(token.String, token.Comment, token.String)),
-            (r'(?s)(\{\-{2})(.*?)(\-{2}\})', bygroups(token.String, token.Comment, token.String)),
-            (r'(?s)(\{={2})(.*?)(={2}\})', bygroups(token.String, token.Comment, token.String)),
-            (r'(?s)(\{>{2})(.*?)(<{2}\})', bygroups(token.String, token.Comment, token.String)),
-            (
-                r'(?s)(\{~{2})(.*?)(~>.)(*?)(~{2}\})',
-                bygroups(token.String, token.Comment, token.String, token.Comment, token.String)
-            ),
+            (r'(?s)\{\+{2}.*?\+{2}\}', token.String),
+            (r'(?s)\{\-{2}.*?\-{2}\}', token.String),
+            (r'(?s)\{={2}.*?={2}\}', token.String),
+            (r'(?s)\{>{2}.*?<{2}\}', token.String),
+            (r'(?s)\{~{2}.*?~>.*?~{2}\}', token.String),
             (r' |\t', token.Whitespace),
             (r'.', token.Text)
         ]
