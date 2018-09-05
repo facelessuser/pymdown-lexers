@@ -16,7 +16,6 @@ class CriticMarkupLexer(RegexLexer):
 
     tokens = {
         'root': [
-            (r'(?s)\\\{(?:\+{2}.*?\+{2}|\-{2}.*?\-{2}|={2}.*?={2}|~{2}.*?~>.*?~{2}|>{2}.*?<{2})\}', token.Text),
             (r'(?s)\{\+{2}.*?\+{2}\}', token.String),
             (r'(?s)\{\-{2}.*?\-{2}\}', token.String),
             (r'(?s)\{={2}.*?={2}\}', token.String),

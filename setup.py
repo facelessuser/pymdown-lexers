@@ -10,7 +10,7 @@ hex=pymdown_lexers:HexLexer
 
 setup(
     name='pymdown-lexers',
-    version='1.0.0',
+    version='1.1.0',
     description='Pygments lexer package for PyMdown.',
     author='Isaac Muse',
     author_email='Isaac.Muse [at] gmail.com',
