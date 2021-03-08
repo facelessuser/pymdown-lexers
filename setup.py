@@ -6,14 +6,15 @@ entry_points = '''
 [pygments.lexers]
 criticmarkup=pymdown_lexers:CriticMarkupLexer
 hex=pymdown_lexers:HexLexer
+csscolor=pymdown_lexers:CSSColorLexer
 '''
 
 setup(
     name='pymdown-lexers',
-    version='1.1.0',
+    version='1.2.0',
     description='Pygments lexer package for PyMdown.',
     author='Isaac Muse',
-    author_email='Isaac.Muse [at] gmail.com',
+    author_email='Isaac.Muse@gmail.com',
     url='https://github.com/facelessuser/pymdown-lexers',
     packages=find_packages(),
     entry_points=entry_points,
