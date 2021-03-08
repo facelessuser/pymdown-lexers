@@ -1,6 +1,6 @@
 """A Pygments lexer for hex data."""
 from pygments.lexer import RegexLexer, bygroups
-from pygments import token
+from pygments.token import *
 
 __all__ = ("CSSColorLexer",)
 
@@ -11,35 +11,35 @@ class CSSColorLexer(RegexLexer):
     name = 'csscolor'
     aliases = ['css-color']
     filenames = ['*.csscolor']
-    mimetypes = ['text/css-color']
 
     tokens = {
         'root': [
             (
-                r'([a-zA-Z][a-zA-Z\d]*)(\()(\s*))',
-                bygroups(token.Name.Function, token.Generic, token.Whitespace),
+                r'([a-zA-Z][a-zA-Z\d]*)(\()(\s*)',
+                bygroups(Name.Function, Generic, Whitespace),
                 'function'
             ),
-            (r'(#)([a-fA-F0-9]{8}|[a-fA-F0-9]{6}|[a-fA-F0-9]{3,4})\b', bygroups(token.Keyword, token.Literal.Number)),
-            (r'[a-zA-Z][-a-zA-Z0-9_]+(?!\()', token.Constant),
-            (r'\s*', token.Whitespace)
+            (r'(#)([a-fA-F0-9]{8}|[a-fA-F0-9]{6}|[a-fA-F0-9]{3,4})\b', bygroups(Keyword, Number)),
+            (r'[a-zA-Z][-a-zA-Z0-9_]+(?!\()', Keyword.Constant),
+            (r'\s+', Whitespace),
         ],
 
         'function': [
-            (r'([ \s]*)(\))', bygroups(token.Whitespace, token.Generic), '#pop'),
+            (r'\)', Generic, '#pop'),
             (r"([+\-])?(?:(?:([0-9]*)(\.)([0-9]+))|([0-9]+))(?:(e[-+]?[0-9]*))?(%|deg|rad|turn|grad)?",
                 bygroups(
-                    token.Generic,
-                    token.Literal.Number,
-                    token.Generic,
-                    token.Literal.Number,
-                    token.Literal.Number,
-                    token.Literal.Number,
-                    token.Keyword
+                    Generic,
+                    Number,
+                    Generic,
+                    Number,
+                    Number,
+                    Number,
+                    Keyword
                 )
             ),
-            (r'[a-zA-Z][-a-zA-Z0-9_]+(?!\()', token.Constant),
-            (r',', token.Generic),
-            (r'\s*', token.Whitespace)
+            (r'[a-zA-Z][-a-zA-Z0-9_]+(?!\()', Keyword.Constant),
+            (r'[,/]', Generic),
+            (r'\s+', Whitespace),
+            (r'$', Generic, '#pop')
         ]
     }
