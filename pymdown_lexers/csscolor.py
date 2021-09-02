@@ -19,7 +19,7 @@ class CSSColorLexer(RegexLexer):
                 bygroups(Name.Function, Generic, Whitespace),
                 'function'
             ),
-            (r'(#)([a-fA-F0-9]{8}|[a-fA-F0-9]{6}|[a-fA-F0-9]{3,4})\b', bygroups(Keyword, Number)),
+            (r'(#)(?:([a-fA-F0-9]{8}|[a-fA-F0-9]{6}|[a-fA-F0-9]{3,4})\b)?', bygroups(Keyword, Number)),
             (r'[a-zA-Z][-a-zA-Z0-9_]+(?!\()', Keyword.Constant),
             (r'//.+?$', Comment.Single),
             (r'/\*[\s\S]*?\*/', Comment.Multiline),
@@ -39,7 +39,7 @@ class CSSColorLexer(RegexLexer):
                     Keyword
                 )
             ),
-            (r'[a-zA-Z][-a-zA-Z0-9_]+(?!\()', Keyword.Constant),
+            (r'[a-zA-Z][-a-zA-Z0-9_]*(?!\()', Keyword.Constant),
             (r'[,/]', Generic),
             (r'\s+', Whitespace),
             (r'$', Generic, '#pop')
