@@ -11,7 +11,7 @@ csscolor=pymdown_lexers:CSSColorLexer
 
 setup(
     name='pymdown-lexers',
-    version='1.2.0',
+    version='1.3.0',
     description='Pygments lexer package for PyMdown.',
     author='Isaac Muse',
     author_email='Isaac.Muse@gmail.com',
