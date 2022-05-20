@@ -7,11 +7,12 @@ entry_points = '''
 criticmarkup=pymdown_lexers:CriticMarkupLexer
 hex=pymdown_lexers:HexLexer
 csscolor=pymdown_lexers:CSSColorLexer
+regex=pymdown_lexers:RegexpLexer
 '''
 
 setup(
     name='pymdown-lexers',
-    version='1.3.0',
+    version='1.4.0',
     description='Pygments lexer package for PyMdown.',
     author='Isaac Muse',
     author_email='Isaac.Muse@gmail.com',
@@ -29,12 +30,12 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.2',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Text Processing :: Filters',
